@@ -1,0 +1,17 @@
+[
+  {
+    "name": "TestScenario_Agent",
+    "type": "custom",
+    "config": {
+      "nodes": [
+        {
+          "id": "n1",
+          "type": "source",
+          "arrival_rate": 1.0
+        }
+      ],
+      "edges": []
+    },
+    "created_at": "1774539664.0841386"
+  }
+]

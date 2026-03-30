@@ -1,0 +1,211 @@
+/* ─── DES Arena — Light Professional Theme ──────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg:         #f8fafc;
+  --surface:    #ffffff;
+  --border:     #e2e8f0;
+  --border-mid: #cbd5e1;
+
+  --text:       #0f172a;
+  --text-dim:   #64748b;
+  --text-muted: #94a3b8;
+
+  --blue:       #2563eb;
+  --blue-light: #eff6ff;
+  --green:      #10b981;
+  --green-light:#ecfdf5;
+  --amber:      #f59e0b;
+  --amber-light:#fffbeb;
+  --red:        #ef4444;
+  --red-light:  #fef2f2;
+  --purple:     #8b5cf6;
+  --purple-light:#f5f3ff;
+  --cyan:       #06b6d4;
+  --cyan-light: #ecfeff;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100%; }
+
+/* ── Scrollbar ─────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: var(--bg); }
+::-webkit-scrollbar-thumb  { background: var(--border-mid); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--blue); }
+
+/* ── Animations ────────────────────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.fade-up-1 { animation: fade-up 0.35s ease forwards 0.05s; opacity: 0; }
+.fade-up-2 { animation: fade-up 0.35s ease forwards 0.10s; opacity: 0; }
+.fade-up-3 { animation: fade-up 0.35s ease forwards 0.15s; opacity: 0; }
+.fade-up-4 { animation: fade-up 0.35s ease forwards 0.20s; opacity: 0; }
+.fade-up-5 { animation: fade-up 0.35s ease forwards 0.25s; opacity: 0; }
+.fade-up-6 { animation: fade-up 0.35s ease forwards 0.30s; opacity: 0; }
+
+/* ── Scenario cards ─────────────────────────────────────────────────────────── */
+.scenario-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.15s;
+  box-shadow: var(--shadow-sm);
+}
+.scenario-card:hover {
+  border-color: var(--blue);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ── Event feed ─────────────────────────────────────────────────────────────── */
+.event-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  transition: background 0.1s;
+}
+.event-row:hover { background: var(--bg); }
+
+/* ── KPI metric cards ───────────────────────────────────────────────────────── */
+.kpi-metric-premium {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--blue);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  transition: box-shadow 0.15s, transform 0.15s;
+  box-shadow: var(--shadow-sm);
+}
+.kpi-metric-premium:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.kpi-metric-premium .title {
+  font-size: 10px;
+  color: var(--text-dim);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.kpi-metric-premium .value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.2;
+}
+
+/* ── Panel header accent ────────────────────────────────────────────────────── */
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.panel-accent {
+  width: 3px;
+  height: 16px;
+  border-radius: 2px;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+.panel-title {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Tab navigation ─────────────────────────────────────────────────────────── */
+.tab-bar {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.tab-item {
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-dim);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.15s, border-color 0.15s;
+  user-select: none;
+}
+.tab-item:hover { color: var(--text); }
+.tab-item.active {
+  color: var(--blue);
+  border-bottom-color: var(--blue);
+}
+
+/* ── Buttons ────────────────────────────────────────────────────────────────── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: #1d4ed8; }
+
+/* ── Section label ──────────────────────────────────────────────────────────── */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Ant Design light overrides ─────────────────────────────────────────────── */
+.ant-alert-banner {
+  font-size: 12px;
+}
