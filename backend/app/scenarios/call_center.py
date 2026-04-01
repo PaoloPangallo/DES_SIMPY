@@ -201,7 +201,7 @@ class CallCenterScenario(BaseScenario):
     # ------------------------------------------------------------------ #
     # Helper emit
     # ------------------------------------------------------------------ #
-
+    time.slee
     def _emit_event(self, event_type: str, payload: dict) -> None:
         if self.pause_event:
             self.pause_event.wait()

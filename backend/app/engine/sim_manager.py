@@ -107,7 +107,7 @@ class SimManager:
                     # Rallentiamo artificialmente in base alla velocità impostata
                     # 1.0x -> 50ms di pausa tra i "frame" di simulazione
                     # 0.1x -> 500ms di pausa
-                    time.sleep(0.05 / instance.speed)
+                    time.sleep(0.30 / instance.speed)
 
                 if scenario._should_stop:
                     instance.status = "stopped"
